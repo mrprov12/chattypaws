@@ -1,0 +1,18 @@
+---
+description: Reference PROJECT_PLAN.md and sub-project SUB_PROJECT_PLAN.md when making changes; document direction changes in those files
+alwaysApply: true
+---
+
+# Reference and Update Project Plans
+
+When making changes or discussing direction:
+
+1. **Always reference** the monorepo plan: `docs/PROJECT_PLAN.md`. Check the relevant stage(s) and deliverables so changes align with the plan.
+
+2. **If a sub-project has a plan**, reference it too. Sub-projects live in their own directories (e.g. `backend-python/`, `pwa/`). If a `docs/SUB_PROJECT_PLAN.md` exists in that directory, read it and keep changes consistent with it.
+
+3. **When we change direction** from what’s written in the plans (e.g. different approach, different tech, scope change, new constraint), **note it in the relevant plan**:
+   - Monorepo-level or stage-level direction changes → update `docs/PROJECT_PLAN.md` (e.g. add a "Changes from original concept" or "Decisions" subsection, or adjust the plan text and add a short note).
+   - Sub-project–specific direction changes → update that sub-project’s `docs/SUB_PROJECT_PLAN.md` if it exists, or add one; otherwise note in `docs/PROJECT_PLAN.md` where it fits.
+
+Keep plan updates concise: what we decided, why (one line is enough if obvious), and where in the doc it diverges from the original.
