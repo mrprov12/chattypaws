@@ -1,6 +1,8 @@
-# PWA (Stage 2+)
+# PWA (Stage 8)
 
-Vite + React (TypeScript). Placeholder for Stage 2 (button mapping) and later; Stage 1 is backend-only.
+Vite + React (TypeScript). Placeholder until Stage 8; we do Home Assistant first (Stage 3) for phone, desktop, and Watch.
+
+**Stage:** PWA development is part of **Stage 8** (optional native apps and desktop). Phone/desktop/Watch go through HA first; this PWA is the optional standalone app or desktop experience if you’re not using the HA dashboard. See [docs/PROJECT_PLAN.md](../docs/PROJECT_PLAN.md) for the full staged plan.
 
 ## Run
 
