@@ -10,5 +10,5 @@ pydantic-settings>=2,<3
 # Database
 psycopg2-binary>=2.9,<3
 
-# Camera stream + detection (Stage 1)
-opencv-python-headless>=4.9,<5
+# Camera stream + detection (Stage 1) — add on detector feature branch
+# opencv-python-headless>=4.9,<5
