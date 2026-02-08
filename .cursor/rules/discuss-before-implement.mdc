@@ -1,0 +1,26 @@
+---
+description: Discuss planned changes before implementing; talk through libraries, steps, and conditionals
+alwaysApply: true
+---
+
+# Discuss Before Implement
+
+Before writing or editing code, expect a discussion. Do not implement until we've talked through the plan.
+
+## What to discuss
+
+- **Library additions**: Any new dependency (npm, pip, etc.) — why it's needed, alternatives considered, and how it will be used.
+- **Steps**: The sequence of changes (e.g. "first add the schema, then the API, then the UI") so we agree on order and scope.
+- **Conditional logic**: New branches, error handling, feature flags, or environment-based behavior — what triggers what and why.
+
+## Format
+
+- **One change or a group**: A single discussion can cover one small change or a related set of changes (e.g. "add library X, wire it in these two files, and add this conditional").
+- **Propose, then implement**: Briefly propose the change(s), get alignment (or feedback), then implement. If the user says "go ahead" or equivalent, proceed.
+
+## Examples
+
+- **Library**: "I'm planning to add `psycopg2` for PostgreSQL. We'll use it in `db.py` for connection and queries. Alternatives: `asyncpg` if we go async later. Proceed?"
+- **Group**: "Next I'll: (1) add the `events` table in the schema, (2) add `insert_event` and `list_events` in `db.py`, (3) call them from the API. Same PR/commit. Sound good?"
+
+When in doubt, state the plan in a sentence or two and wait for a nod before editing files.

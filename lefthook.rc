@@ -1,0 +1,18 @@
+
+# An nvm way
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# An fnm way
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env)"
+fi
+
+# Fallback for manual Node.js installations
+# Check common installation paths and add to PATH if node/npx exists
+for node_path in /usr/local/bin /opt/homebrew/bin "$HOME/.local/bin" "$HOME/bin"; do
+  if [ -d "$node_path" ] && [ -x "$node_path/node" ] && [ -x "$node_path/npx" ]; then
+    PATH="$node_path:$PATH"
+    break
+  fi
+done

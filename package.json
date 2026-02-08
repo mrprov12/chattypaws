@@ -1,0 +1,14 @@
+{
+  "name": "chattypaws",
+  "private": true,
+  "description": "Monorepo root — commit linting and hooks only",
+  "scripts": {
+    "prepare": "lefthook install",
+    "commitlint": "commitlint --edit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@evilmartians/lefthook": "^2.0.0"
+  }
+}

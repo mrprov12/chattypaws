@@ -1,0 +1,22 @@
+---
+description: Consider scaling and future feature needs when designing architecture
+alwaysApply: true
+---
+
+# Architecture: Scale and Future Needs
+
+When designing or changing architecture (APIs, data models, services, modules), explicitly consider:
+
+## Scaling
+
+- **Load and concurrency**: Will this design handle more users, requests, or background work? Where are the bottlenecks?
+- **Data volume**: Will tables, queues, or caches grow; do we need pagination, partitioning, or archiving from the start?
+- **Deployment**: Single instance now vs. multiple instances, workers, or regions later — any assumptions that would block horizontal scaling?
+
+## Future features
+
+- **Extensibility**: What’s likely to be added next (e.g. new event types, integrations, tenants)? Does the current shape make those changes local or invasive?
+- **Abstraction level**: Are we locking in a detail too early (e.g. one DB, one provider) or over-abstracting for hypotheticals?
+- **Coupling**: Can new features plug in without rewriting existing paths? Are boundaries clear (e.g. API vs. domain vs. storage)?
+
+When proposing a design, briefly call out scaling and future-feature implications so we can choose tradeoffs intentionally.
