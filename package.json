@@ -9,6 +9,6 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
-    "lefthook": "^0.7.7"
+    "@evilmartians/lefthook": "^2.0.0"
   }
 }

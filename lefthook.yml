@@ -1,5 +1,7 @@
 # Git hooks: https://github.com/evilmartians/lefthook
 # Commit message must follow conventional commits with workspace scope (see .cursor/rules/conventional-commits-workspace.mdc)
+#
+# Install hooks (required after clone or if hooks don't run): npm install  OR  npx lefthook install
 
 commit-msg:
   commands:
