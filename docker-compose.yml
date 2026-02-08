@@ -1,0 +1,30 @@
+# Chattypaws — backend + Postgres for local/containerized run.
+# Optional: use when you want the stack in containers. For dev, you can still run
+# backend with pip + uvicorn and a host Postgres.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: chattypaws
+      POSTGRES_USER: chattypaws
+      POSTGRES_PASSWORD: chattypaws
+    ports:
+      - "5432:5432"
+    volumes:
+      - chattypaws_pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend-python
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://chattypaws:chattypaws@db:5432/chattypaws
+      RTSP_URL: ${RTSP_URL:-rtsp://localhost:554/stream1}
+      CAMERA_ID: ${CAMERA_ID:-c120}
+    depends_on:
+      - db
+
+volumes:
+  chattypaws_pgdata:
