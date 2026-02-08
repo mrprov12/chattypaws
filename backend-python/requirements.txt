@@ -1,0 +1,14 @@
+# Chattypaws backend — Stage 1
+# Run: pip install -r backend-python/requirements.txt
+
+fastapi>=0.109,<1
+uvicorn[standard]>=0.27,<1
+python-dotenv>=1.0,<2
+pydantic>=2,<3
+pydantic-settings>=2,<3
+
+# Database
+psycopg2-binary>=2.9,<3
+
+# Camera stream + detection (Stage 1)
+opencv-python-headless>=4.9,<5
