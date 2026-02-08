@@ -283,6 +283,8 @@ So in practice: you’ll have at least **one Docker image** for the backend (and
 1. **Entities only (no custom UI):** The backend/add-on registers **entities** (sensors, buttons, etc.) and **services** with HA. Users see them in the HA UI and build their own dashboard with **standard Lovelace cards** (entity cards, buttons, etc.). No custom frontend code; we only implement the integration/add-on side that creates entities.
 2. **Custom Lovelace / custom integration:** If we want a dedicated Chattypaws panel or cards (e.g. “Conversation history,” “Respond with sound” picker), we build a **custom integration** and/or **custom Lovelace cards** (JavaScript/TypeScript, following [HA’s custom component and frontend API](https://developers.home-assistant.io/docs/frontend)). That code lives in the repo (e.g. `ha-frontend/` or inside the add-on as a custom component) and is loaded by HA. So “HA frontend” = either zero (use standard cards) or a small JS/TS codebase for custom cards/panel.
 
+**Docker is already initialized:** The repo has `backend-python/Dockerfile`, `backend-python/.dockerignore`, and a root `docker-compose.yml` (backend + Postgres) so we can run the stack in containers when needed. See README for how to run with Docker.
+
 ---
 
 ## Versioning (two streams: backend+add-on vs PWA/apps)
