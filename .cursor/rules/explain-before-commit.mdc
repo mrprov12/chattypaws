@@ -10,10 +10,10 @@ We already discussed the change before implementing (see Discuss Before Implemen
 1. **Executive summary only**: In a few sentences, state what the commit contains.
    - What files or areas changed.
    - What it accomplishes (plain terms).
-   - Proposed commit message.
+   - Proposed commit message (use conventional commits with workspace scope: see Conventional Commits by Workspace rule).
 
 2. **Then** wait for approval before staging and committing.
 
-Example: "This commit adds the DB schema and helpers: `backend/db.py` defines the `events` table and `insert_event` / `list_events`; the API creates the table on startup. Plan to commit as: `feat(stage-1): add DB schema and event helpers`."
+Example: "This commit adds the DB schema and helpers: `backend-python/db.py` defines the `events` table and `insert_event` / `list_events`; the API creates the table on startup. Plan to commit as: `feat(backend-python): add DB schema and event helpers`."
 
 Do not batch unrelated changes into one commit; prefer one logical step per commit when the work is substantial.

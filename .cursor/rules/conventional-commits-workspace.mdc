@@ -1,0 +1,35 @@
+---
+description: Conventional commits with workspace scopes for the monorepo
+alwaysApply: true
+---
+
+# Conventional Commits by Workspace
+
+Use [Conventional Commits](https://www.conventionalcommits.org/) with a **scope** that indicates which part of the repo changed.
+
+## Format
+
+```
+type(scope): short description
+```
+
+- **type**: `feat`, `fix`, `chore`, `docs`, `style`, `refactor`, `test`, etc.
+- **scope**: One of the workspace scopes below (required).
+- **short description**: Lowercase, imperative; no period at the end.
+
+## Workspace scopes
+
+| Scope | When to use |
+|-------|-------------|
+| `repo` | Root-only: `docs/`, `.cursor/`, `.gitignore`, root README, root config (e.g. commitlint, husky), anything not under a subrepo. |
+| `backend-python` | Any file under `backend-python/`. |
+| `pwa` | Any file under `pwa/`. |
+
+**Choosing scope:** Infer from the changed files. If only one workspace is touched, use that scope. If multiple workspaces are touched, prefer one commit per workspace; if you combine, use the primary workspace as scope and mention the other(s) in the body.
+
+## Adding new subrepos
+
+When a new subrepo is added to the monorepo (e.g. a new app or service directory):
+
+1. **Add it as a workspace scope**: Update this rule and the commitlint config with the new scope (e.g. `new-app`).
+2. **Document it**: Add a row to the "Workspace scopes" table above and keep the commitlint scope list in sync so commits and tooling stay consistent.
