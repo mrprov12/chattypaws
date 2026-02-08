@@ -49,6 +49,17 @@ We version **backend** and **PWA/apps** separately so each can be released indep
 
 Code is written so that **every step is understandable**: clear names, short comments where needed, and explanations when we add new pieces. If anything is unclear as we go, we can pause and spell it out.
 
+
+## Docker (for later containerization)
+
+Docker is set up so we can run the stack in containers when needed (e.g. Stage 3 / HA add-on).
+
+- **`backend-python/Dockerfile`** — Builds the backend image (API; override CMD to run the detector). Used for standalone runs and as the base for the HA add-on.
+- **`backend-python/.dockerignore`** — Keeps build context small (excludes `__pycache__`, `.env`, etc.).
+- **`docker-compose.yml`** (repo root) — Backend + Postgres. Run with `docker compose up --build`. Set `RTSP_URL` and `CAMERA_ID` via env or a `.env` next to the compose file.
+
+For day-to-day dev you can keep using `pip install -r backend-python/requirements.txt` and `uvicorn` (and a host Postgres) without Docker.
+
 ## Next steps
 
 1. Confirm Tapo C120 is on the network and RTSP works (e.g. VLC with `rtsp://<ip>:554/stream1`).  
