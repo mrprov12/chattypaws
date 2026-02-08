@@ -1,0 +1,7 @@
+# Git hooks: https://github.com/evilmartians/lefthook
+# Commit message must follow conventional commits with workspace scope (see .cursor/rules/conventional-commits-workspace.mdc)
+
+commit-msg:
+  commands:
+    "lint commit message":
+      run: npm run commitlint -- {1}
